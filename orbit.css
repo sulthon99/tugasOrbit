@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, san-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    color: #333;
+}
+
+.faq-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.faq-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #2c3c50;
+
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    gap: 20px;
+    align-items: start;
+}
+
+.faq-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0.02);
+    transition: all 0.3s ease;
+
+}
+
+.faq-header {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid transparant;
+    transition: background-color 0.3s;
+
+
+}
+
+.faq-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 15px
+    
+}
+
+.faq-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #000;
+
+}
+
+.faq-question {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.4;
+    font-weight: 500;
+
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    font-weight: 300;
+    transition: color 0.3s;
+
+}
+.faq-card.active {
+    border-color: #d0d0d0;
+}
+
+.faq-card.active .faq-header {
+    background-color: #f4f5f7;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-card.active .faq-icon {
+    color: #e63946;
+
+}
+
+.faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+    background-color: #ffffff;
+}
+
+.faq-content-inner {
+    overflow: hidden;
+}
+
+.faq-content-inner p {
+    padding: 0 20px;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.faq-card.active .faq-content {
+    grid-template-rows: 1fr;
+}
+
+.faq-card.active .faq-content-inner p {
+    padding: 20px;
+}
+
+@media (max-width: 900px) {
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
